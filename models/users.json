@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "name": "廣志",
+      "email": "hiroshi@example.com",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "name": "小新",
+      "email": "shi5555@example.com",
+      "password": "12345678"
+    }
+  ]
+}

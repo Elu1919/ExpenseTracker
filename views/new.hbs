@@ -1,0 +1,107 @@
+<form action="/records"
+      method="POST">
+
+  {{!-- 提示 --}}
+  <div class="row g-3 align-items-center mx-auto mt-5 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="col-auto my-auto text-center">
+      <p class="my-auto"
+         style="font-size: 9pt;">*必填欄位</p>
+    </div>
+    <div class="col-6 my-auto text-center">
+      <h3 class="fw-bold">新增一筆新的支出</h3>
+    </div>
+  </div>
+
+  <div class="mx-auto"
+       style="width: 30%;">
+    {{> message}}
+  </div>
+
+  {{!-- 名稱 --}}
+  <div class="row g-3 align-items-center mx-auto mt-4 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="col-auto my-auto text-center">
+      <label for="name"
+             class="col-form-label">名稱*</label>
+    </div>
+    <div class="col-6 my-auto">
+      <input type="string"
+             id="name"
+             name="name"
+             value="{{recordData.name}}"
+             class="form-control"
+             aria-describedby="passwordHelpInline"
+             required>
+    </div>
+  </div>
+  {{!-- 日期 --}}
+  <div class="row g-3 align-items-center mx-auto mt-4 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="col-auto my-auto text-center">
+      <label for="date"
+             class="col-form-label">日期*</label>
+    </div>
+    <div class="col-6 my-auto">
+      <input type="date"
+             id="date"
+             name="date"
+             value="{{recordData.date}}"
+             class="form-control"
+             aria-describedby="passwordHelpInline"
+             required>
+    </div>
+  </div>
+  {{!-- 類別 --}}
+  <div class="row g-3 align-items-center mx-auto mt-4 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="col-auto my-auto text-center">
+      <label for="category"
+             class="col-form-label">類別*</label>
+    </div>
+    <div class="col-6 my-auto">
+      <select class="form-select"
+              id="category"
+              name="categoryId"
+              aria-label="Default select example"
+              required>
+        <option>請選擇項目類別</option>
+        <option value="1">家居物業</option>
+        <option value="2">交通出行</option>
+        <option value="3">休閒娛樂</option>
+        <option value="4">餐飲食品</option>
+        <option value="5">其它項目</option>
+      </select>
+    </div>
+  </div>
+  {{!-- 金額 --}}
+  <div class="row g-3 align-items-center mx-auto mt-4 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="col-auto my-auto text-center">
+      <label for="amount"
+             class="col-form-label">金額*</label>
+    </div>
+    <div class="col-6 my-auto">
+      <input type="number"
+             id="amount"
+             name="amount"
+             value="{{recordData.amount}}"
+             class="form-control"
+             aria-describedby="passwordHelpInline"
+             required>
+    </div>
+  </div>
+  {{!-- Submit --}}
+  <div class="mx-auto my-4 d-flex justify-content-center"
+       style="width: 55%;">
+    <div class="d-grid gap-2 col-4">
+      <button class="btn btn-primary border-0 fw-bold"
+              style="background:#e95420"
+              type="submit"
+              role="button">新增支出</button>
+      <a class="btn btn-outline-secondary fw-bold"
+         href="/"
+         role="button">返回記帳本</a>
+    </div>
+  </div>
+</form>

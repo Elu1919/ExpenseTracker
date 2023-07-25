@@ -1,0 +1,91 @@
+<div class="dropdown d-grid gap-2 mx-auto my-4 "
+     style="width: 55%;">
+  <button class="btn btn-secondary dropdown-toggle border-0 fw-bold"
+          style="background:#7b7b7b"
+          type="button"
+          id="dropdownMenuButton2"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+    {{cateBtn.name}}
+  </button>
+  <ul class="dropdown-menu dropdown-menu-lg-end"
+      style="background:white"
+      aria-labelledby="dropdownMenuButton2">
+    <li><a class="dropdown-item"
+         href="/">全部項目</a></li>
+    {{#each categoryData}}
+    <li><a class="dropdown-item"
+         href="/category/{{this.id}}">{{this.name}}</a></li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="mx-auto mb-3"
+     style="width: 55%;">
+  <div class="my-auto">
+    <p class="fw-bold my-auto">
+      總金額：
+      <span class="fs-1 align-middle"
+            style="color:#e95420">{{totalAmount}}</span>
+    </p>
+  </div>
+</div>
+
+<ul class="list-group">
+  {{#each renderData}}
+  <li class="list-group-item mx-auto"
+      style="width: 55%;">
+
+    <div class="row mx-2 my-1">
+
+      <div class="col-md-1 d-flex p-0">
+        <p class="d-block my-auto mx-auto">
+          <i class='{{this.cateImg}} fa-2xl'
+             style="color:#e3a36e"></i>
+        </p>
+      </div>
+
+      <div class="col d-flex me-auto">
+        <div class="my-auto">
+          <h5 class="fw-bold my-auto">
+            {{ this.name }}
+          </h5>
+          <p class="d-block my-auto">{{this.date}}</p>
+        </div>
+      </div>
+
+      <div class="col my-auto">
+        <p class="fs-4 text-end d-block my-auto">
+          {{ this.amount }}
+        </p>
+      </div>
+
+      <div class="col my-auto d-flex justify-content-end">
+        <div>
+          <a class="btn btn-success mx-2"
+             href="/records/{{ this._id }}/edit"><i class="fa-solid fa-pen-to-square fa-lg"
+               style="color: #ffffff;"></i></a>
+        </div>
+        <form action="/records/{{ this._id }}?_method=DELETE"
+              method="POST"
+              style="display: inline;">
+          <button class="btn btn-danger"
+                  type="submit"><i class="fa-solid fa-trash fa-lg"
+               style="color: #ffffff;"></i></button>
+        </form>
+      </div>
+
+    </div>
+  </li>
+  {{/each}}
+</ul>
+
+<div class="mx-auto my-4 d-flex justify-content-end"
+     style="width: 55%;">
+  <div class="d-grid gap-2 col-6">
+    <a class="btn btn-primary border-0 fw-bold"
+       style="background:#e95420"
+       href="/records/new"
+       role="button">新增支出</a>
+  </div>
+</div>
